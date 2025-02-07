@@ -1,4 +1,6 @@
 import express, {Request, Response} from "express";
+import { getCustomers, getCustomersv2 } from "./controllers/customers";
+import customerRouter from "./routes/customer";
 require("dotenv").config();
 const cors = require("cors");
 const app = express(); // Creating express app
@@ -13,10 +15,5 @@ app.listen(PORT, () => {
 });
 
 //Creating API
-
-app.get("/customers", async(req:Request,res:Response) => {
-    const customers = [
-        {name:"John Doe", email:"john@mail.com", phone:"+123456789"}
-    ]
-    return res.status(200).json(customers)
-});
+app.use("/api/v1", customerRouter)
+app.use("/api/v2", customerRouter)

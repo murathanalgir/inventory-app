@@ -13,7 +13,7 @@ An inventory management application built using Node.js, TypeScript, Express, an
 - Node.js
 - TypeScript
 - Express.js
-- Prisma ORM
+- Prisma
 - MongoDB
 
 ## Installation
